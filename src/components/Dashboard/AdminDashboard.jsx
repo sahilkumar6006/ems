@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from '../other/header'
+import AllTask from '../other/AllTask'
 
 function AdminDashboard() {
   return (
@@ -33,6 +34,7 @@ function AdminDashboard() {
                 <button className='bg-emerald-500 hover:bg-emerald-600 px-20 rounded text-sm mt-4 w-full p-3'>Create Task</button>
             </form>
         </div>
+        <AllTask/>
     </div>
   )
 }
