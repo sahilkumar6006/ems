@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Login from './components/Auth/Login'
 import EmployeeDashboard from './components/Dashboard/EmployeeDashboard'
 import AdminDashboard from './components/Dashboard/AdminDashboard'
-import AuthContext from './context/AuthContext'
-import { getLocalStorage, setLocalStorage } from './utils/localStorage'
+import { setLocalStorage } from './utils/localStorage'
+import {AuthContext} from './context/AuthProvider'
 
 function App() {
 const [user, setUser] = useState(null);
@@ -22,18 +22,18 @@ console.log('in the handlelogin', email, password)
 
 handleLogin('admin@me.com', 123);
 
+
   useEffect(() => {
-    // setLocalStorage();
-    getLocalStorage()
+    setLocalStorage();
+    // getLocalStorage()
   }, []);
 
+  const authData = useContext(AuthContext)
+  console.log(authData.employees);
   return (
    <>
    {!user ? <Login handleLogin = {handleLogin} /> : ''}
-   {/* <EmployeeDashboard/> */}
-   {/* <h1>hello</h1> */}
-   {/* <AdminDashboard/> */}
-
+    {user == 'admin'? <AdminDashboard/> : <EmployeeDashboard/>}
    </>
   )
 }
