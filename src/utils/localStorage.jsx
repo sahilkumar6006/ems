@@ -2,8 +2,15 @@
   const employees = [
     {
       "id": 1,
-      "email": "employee1@example.com",
-      "password": "password123",
+      "email": "sahil@me.com",
+      "password": "123",
+      "taskCount": {
+        "total": 4,
+        "active": 2,
+        "newTask": 1,
+        "failed": 1,
+        "completed": 1
+      },
       "tasks": [
         {
           "active": true,
@@ -88,6 +95,13 @@
       "id": 3,
       "email": "employee3@example.com",
       "password": "password123",
+      "taskCount": {
+        "total": 4,
+        "active": 2,
+        "newTask": 1,
+        "failed": 1,
+        "completed": 1
+      },
       "tasks": [
         {
           "active": true,
@@ -145,6 +159,13 @@
       "id": 4,
       "email": "employee4@example.com",
       "password": "password123",
+      "taskCount": {
+        "total": 4,
+        "active": 2,
+        "newTask": 1,
+        "failed": 1,
+        "completed": 1
+      },
       "tasks": [
         {
           "active": false,
